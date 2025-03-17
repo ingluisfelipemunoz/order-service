@@ -1,0 +1,2 @@
+docker exec -it db psql -U orderuser -d ordersdb
+select * from order_events;
