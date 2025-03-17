@@ -10,7 +10,6 @@ import com.ejemplo.order.order_service.OrderProducer;
 import com.ejemplo.order.order_service.dto.OrderEventDto;
 
 @RestController
-@RequestMapping("/")
 public class OrderController {
     private final OrderProducer orderProducer;
 
