@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ejemplo.order.order_service.OrderProducer;
+import com.ejemplo.order.order_service.dto.OrderEventDto;
 
 @RestController
 @RequestMapping("/orders")
@@ -18,8 +19,8 @@ public class OrderController {
     }
 
     @PostMapping("/send")
-    public ResponseEntity<String> sendOrder(@RequestBody String orderInfo) {
-        orderProducer.sendOrderMessage(orderInfo);
+    public ResponseEntity<String> sendOrder(@RequestBody OrderEventDto orderInfo) {
+        orderProducer.sendOrderMessage(orderInfo.getOrderInfo());
         return ResponseEntity.ok("Order message sent");
     }
 }
